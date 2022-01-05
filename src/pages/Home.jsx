@@ -1,15 +1,9 @@
 import React, { useEffect } from 'react'
-
-const { naver } = window;
+import initMap from '../utils/maps'
 
 export default function Home() {
   useEffect(() => {
-    const container = document.getElementById("cp-map")
-    const mapOptions = {
-        center: new naver.maps.LatLng(37.3595704, 127.105399),
-        zoom: 10
-    };
-    const map = new naver.maps.Map(container, mapOptions);
+    initMap();
   }, [])
   
   return (
