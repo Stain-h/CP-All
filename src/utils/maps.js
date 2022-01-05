@@ -1,4 +1,3 @@
-
 const { naver } = window;
 
 export default function initMap(){

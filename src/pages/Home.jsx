@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
-import Header from '../components/Header';
-import SearchForm from '../components/SearchForm';
-import initMap from '../utils/maps'
+import Header from 'components/Header';
+import SearchForm from 'components/SearchForm';
+import initMap from 'utils/maps'
 
 export default function Home() {
   useEffect(() => {
