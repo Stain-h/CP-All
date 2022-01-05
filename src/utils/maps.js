@@ -8,7 +8,7 @@ export default function initMap(){
       center: Home,
       zoom: 17, //지도의 초기 줌 레벨
       minZoom: 7, //지도의 최소 줌 레벨
-      zoomControl: true, //줌 컨트롤의 표시 여부
+      zoomControl: false, //줌 컨트롤의 표시 여부
   };
   const map = new naver.maps.Map(container, mapOptions);
   const marker = new naver.maps.Marker({
