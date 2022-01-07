@@ -13,8 +13,9 @@ const GlobalStyles = createGlobalStyle`
   input::-ms-clear{display:none}
   button{border:0 none;background-color:transparent;cursor:pointer}
   body{background:var(--bg-color)}
-  body,th,td,input,select,textarea,button{font-size:12px;line-height:1.5;font-family:'NotoSans','Apple SD Gothic Neo',sans-serif;letter-spacing:-0.05em;color:var(--text-color)} /* color값은 디자인가이드에 맞게사용 */
-  a{color:var(--text-color);text-decoration:none}
+  body,th,td,input,select,textarea,button{font-size:12px;line-height:1.5;font-family:'NotoSans','Apple SD Gothic Neo',sans-serif;letter-spacing:-0.05em;color:#333} /* color값은 디자인가이드에 맞게사용 */
+  button{padding:0}
+  a{color:#333;text-decoration:none}
   a:active, a:hover{text-decoration:underline}
   a:active{background-color:transparent}
   address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
