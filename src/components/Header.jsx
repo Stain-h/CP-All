@@ -1,14 +1,12 @@
 import React, { Component } from 'react'
 import 'components/components.css';
+import NumberTest from 'components/NumberTest'
 
-export class Header extends Component {
-  render() {
-    return (
-      <header className="cp_header">
-        Header입니다.
-      </header>
-    )
-  }
+export default function Header() {
+
+  return (
+    <header className="cp_header">
+      <NumberTest />
+    </header>
+  )
 }
-
-export default Header

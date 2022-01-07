@@ -27,7 +27,21 @@
   top: 9px;
   width: 16px;
   height: 16px;
-  border: none;
   background-color: #ccc;
   cursor: pointer;
 }
+
+/* redux test */
+.number{
+  display: block;
+  font-size: 30px;
+  font-weight: bold;
+}
+.button{
+  width: 30px;
+  height: 30px;
+  border: 1px solid #000;
+  background-color: #ccc;
+  cursor: pointer;
+}
+.button + .button {margin-left: 3px;}
