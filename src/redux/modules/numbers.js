@@ -1,6 +1,6 @@
 // Action Type
-export const ADD_COUNT = "ADD_COUNT"
-export const REMOVE_COUNT = "REMOVE_COUNT"
+export const ADD_COUNT = "cp-all/numbers/ADD_COUNT"
+export const REMOVE_COUNT = "cp-all/numbers/REMOVE_COUNT"
 
 // Action Function 
 export function addCountAction() {

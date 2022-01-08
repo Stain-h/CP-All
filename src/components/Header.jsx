@@ -1,17 +1,17 @@
 import React, { Component } from 'react'
 import 'components/components.css';
-import NumberTest from 'components/NumberTest'
+import { useRef } from 'react';
 
 export default function Header() {
-  const cpHeader = document.querySelector(".cp_header")
-  const handleClick = () => {
-    cpHeader.classList.toggle('on');
+  const headerEl = useRef();
+  const handleMenuClick = () => {
+    headerEl.current.classList.toggle('on')
   }
 
   return (
-    <header className="cp_header">
+    <header className="cp_header" ref={headerEl}>
       <div className="gnb">
-        <button onClick={handleClick}><span className="ico_cp ico_menu"></span></button>
+        <button onClick={handleMenuClick}><span className="ico_cp ico_menu"></span></button>
       </div>
     </header>
   )
