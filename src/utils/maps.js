@@ -2,22 +2,22 @@ const { naver } = window;
 
 export default function initMap(){
   const container = document.getElementById("cp-map");
-  const Home = new naver.maps.LatLng(37.5086382, 127.030291);
+  const Location = new naver.maps.LatLng(37.5074838, 127.034238);
   const mapOptions = {
-      center: Home,
+      center: Location,
       zoom: 17, //지도의 초기 줌 레벨
       minZoom: 7, //지도의 최소 줌 레벨
       zoomControl: false, //줌 컨트롤의 표시 여부
   };
   const map = new naver.maps.Map(container, mapOptions);
   const marker = new naver.maps.Marker({
-    position: Home,
+    position: Location,
     map: map,
   });  
 
   const contentString = [
       '<div class="iw_inner">',
-      '   <h3>우리집</h3>',
+      '   <h3>Check Point</h3>',
       '</div>'
   ].join('');
   

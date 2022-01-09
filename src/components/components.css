@@ -1,4 +1,5 @@
-.cp_header {
+.gnb {
+  overflow: hidden;
   position: absolute;
   top: 20px;
   left: 20px;
@@ -6,22 +7,134 @@
   width: 50px;
   height: calc(100% - 40px);
   background-color: #fff;
+  box-sizing: border-box;
 }
-.cp_header.on {
-  width: 450px;
+.btn_menu{
+  width: 50px;
+  height: 50px;
+  padding: 12px;
+  border-right: 1px solid #16A023;
+  background-color: #2CB539;
+}
+.list_gnb{
+  height: calc(100% - 40px);
+}
+.list_gnb li{
+  height: 50px;
+}
+.gnb_item{
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  padding: 12px;
+  border-bottom: 1px solid #ccc;
+  background-color: #eee;
+  box-sizing: border-box;
 }
 
-/* gnb */
-.gnb{
-  width: 100%;
+
+
+/* header - content */
+.cont_detail{
+  overflow-y: auto;
+  position: absolute;
+  top: 20px;
+  left: 70px;
+  z-index: 10;
+  width: 450px;
+  height: calc(100% - 40px);
+  background-color: #eee;
+}
+.cont_detail .box_top{
+  position: relative;
   height: 50px;
   background-color: #2CB539;
 }
-.gnb .ico_menu{
-  margin-left: 12px;
-  margin-top: 12px;
+.cont_detail .ico_logo{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+.box_img{
+  overflow: hidden;
+  width: 360px;
+  height: 200px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #fff;
+}
+.box_img img{
+  width: 100%;
+  height: 100%;
+}
+.box_detail{
+  /* padding:20px; */
+}
+.box_detail p{
+  padding: 0 20px;
+}
+.tit_detail{
+  padding: 0 20px;
+  font-size: 32px;
+  display: block;
+}
+.tit_info{
+  padding: 0 20px;
+  padding-top: 10px;
+  font-size: 24px;
+  display: block;
 }
 
+/* 사진 목록 */
+.swiper.swiper_pictures {
+  padding:10px 30px 20px;
+}
+.swiper_pictures .swiper-slide{
+  height: 120px;
+  border-radius: 18px;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+.swiper_pictures .swiper-button-next:after, 
+.swiper_pictures .swiper-button-prev:after{
+  font-size: 20px;
+  color: #333;
+}
+.swiper_pictures .swiper-button-prev{
+  top: 48%;
+  left: 0;
+}
+.swiper_pictures .swiper-button-next{
+  top: 48%;
+  right: 0;
+}
+/* .list_img{
+  overflow-x: auto;
+  width: 100%;
+}
+.list_img li{
+  float: left;
+  width: 100px;
+  height: 100px;
+  border-radius: 18px;
+  background-color: #fff;
+}
+.list_img li + li{
+  margin-left: 10px;
+} */
+
+.box_foot{
+  /* height: 50px; */
+  padding: 20px 0 10px;
+  border-top: 1px solid #ccc;
+  text-align: center;
+}
+
+
+
+/* SearchForm */
 .form{
   position: absolute;
   top: 20px;
@@ -46,6 +159,9 @@
 }
 
 /* icon */
+.ico_logo{
+  width: 120px;
+}
 .ico_menu{
   display: inline-block;
   width:25px;
