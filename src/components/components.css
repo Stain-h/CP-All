@@ -10,11 +10,13 @@
   box-sizing: border-box;
 }
 .btn_menu{
+  display: inline-block;
   width: 50px;
   height: 50px;
   padding: 12px;
   border-right: 1px solid #16A023;
   background-color: #2CB539;
+  box-sizing: border-box;
 }
 .list_gnb{
   height: calc(100% - 40px);
@@ -135,7 +137,7 @@
 
 
 /* SearchForm */
-.form{
+.box_form{
   position: absolute;
   top: 20px;
   right: 20px;

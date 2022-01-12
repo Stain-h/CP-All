@@ -1,7 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import 'components/components.css';
 import { useRef } from 'react';
-import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import 'swiper/css';
@@ -17,16 +16,7 @@ export default function Header() {
   }
 
   return (
-    <>
-      <div className="gnb">
-        <button className="btn_menu" onClick={handleMenuClick}><span className="ico_cp ico_menu"></span></button>
-        <ul className="list_gnb">
-          <li><Link to="#" className="gnb_item">MY</Link></li>
-          <li><Link to="#" className="gnb_item"></Link></li>
-          <li><Link to="#" className="gnb_item"></Link></li>
-          <li><Link to="#" className="gnb_item"></Link></li>
-        </ul>
-      </div>
+    <div className="header">
       <div className="cont_detail" ref={headerEl}>
         <div className="box_top">
           <svg className="ico_logo" viewBox="0 0 288 52" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -76,7 +66,7 @@ export default function Header() {
           <span>&copy; copyright {new Date().getFullYear()} All Right Reserved.</span>
         </div>
       </div>
-    </>
+    </div>
     // <header className="cp_header" ref={headerEl}>
     //   <div className="gnb">
     //     <button className="btn_menu" onClick={handleMenuClick}><span className="ico_cp ico_menu"></span></button>

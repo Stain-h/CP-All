@@ -17,7 +17,7 @@ const GlobalStyles = createGlobalStyle`
   button{padding:0}
   a{color:#333;text-decoration:none}
   a:active, a:hover{text-decoration:none}
-  a:active{background-color:transparent}
+  /* a:active{background-color:transparent} */
   address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
   img{vertical-align:top}
 `
