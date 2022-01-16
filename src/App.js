@@ -5,12 +5,14 @@ import Layout from "Layout"
 import SearchForm from 'components/SearchForm';
 import { onAuthStateChanged } from '@firebase/auth';
 import { auth } from 'fbase';
+import initMap from 'utils/maps';
 
 function App() {
   const [init, setInit] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
+    initMap();
     onAuthStateChanged(auth, (user) => {
       if(user){
         setIsLoggedIn(true)
