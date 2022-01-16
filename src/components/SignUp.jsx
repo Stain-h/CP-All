@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import { auth, user } from 'fbase';
-import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
+import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth'
 
 export default function SignUp() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [currentUser, setCurrentUser] = useState(user);
+  const [newAccount, setNewAccount] = useState(false);
 
   function onChange (e) {
     const { name, value } = e.target;
@@ -20,13 +21,19 @@ export default function SignUp() {
   const onHandleSubmit = async(e) => {
     e.preventDefault();
     try{
-      await createUserWithEmailAndPassword(auth, email, password);
+      let data;
+      if(newAccount){
+        data = await createUserWithEmailAndPassword(auth, email, password);
+      }else{
+        data = await signInWithEmailAndPassword(auth, email, password)
+      }
     }catch(error){
       setError(error.message)
     }
     setCurrentUser(user);
   }
   
+  const toggleAccount = () => setNewAccount((prev) => !prev)
   function onSocialLogin(e) {
     const { name } = e.target;
     let provider;
@@ -50,7 +57,8 @@ export default function SignUp() {
           <input type="password" name="password" placeholder="Password" onChange={onChange} className="tf_g" />
         </div>
         <div className="wrap_btn">
-          <button type="submit" className="btn btn_submit">Create Account</button>
+          <button type="button" className="btn" onClick={toggleAccount}>Toggle Account</button>
+          <button type="submit" className="btn btn_submit">{newAccount ? 'Create Account' : 'Log in'}</button>
           <button type="button" name="google" onClick={onSocialLogin} className="btn btn_google">Google Login</button>
         </div>
         <p>{error}</p>
