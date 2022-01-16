@@ -2,11 +2,11 @@ import React from 'react'
 import Gnb from 'components/Gnb';
 import UserDetailContainer from 'containers/UserDetailContainer';
 
-export default function MyPage() {
+export default function MyPage({isLoggedIn}) {
   return (
     <>
       <Gnb />
-      <UserDetailContainer />
+      <UserDetailContainer isLoggedIn={isLoggedIn} />
     </>
   )
 }

@@ -152,6 +152,65 @@
   background-color: #fff;
 }
 
+
+/* Form */
+.wrap_form{
+  padding: 40px 0;
+}
+.tit_form{
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+}
+.form {
+  padding: 0 40px;
+}
+.box_tf{
+  width: 100%;
+}
+.box_tf + .box_tf {
+  margin-top: 10px;
+}
+.tf_g{
+  width: 100%;
+  height: 40px;
+  font-size: 14px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.wrap_btn{
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px dotted #ccc;
+}
+.btn{
+  width: 100%;
+  height: 40px;
+  border-radius: 4px;
+  /* font-size: 12px; */
+  background-color: #ccc;
+}
+.btn + .btn {
+  margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* redux test */
 .number{
   display: block;
