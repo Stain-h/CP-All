@@ -156,15 +156,12 @@
 
 /* Form */
 .wrap_form{
-  padding: 40px 0;
+  padding: 40px;
 }
 .tit_form{
   font-size: 40px;
   font-weight: bold;
   text-align: center;
-}
-.form {
-  padding: 0 40px;
 }
 .box_tf{
   width: 100%;
