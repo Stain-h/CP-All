@@ -7,7 +7,7 @@
 ``` npm run start ```
 
 ## Firebase DB
-``` npm i firestore-export-import ```
+``` npm i firestore-export-import ```  
 ``` firestore-import --accountCredentials SERVICE_KEY.json --backupFile DATA_FILE.json ```
 ``` 
 firebase data sample
