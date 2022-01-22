@@ -4,7 +4,7 @@ export default function UserDetail() {
   return (
     <article className="content cont_detail">
      <div className="wrap_profile">
-        <div className="img_wrap"><img src="http://placehold.it/300x200" alt="profile image"/></div>
+        <div className="img_wrap"><img src="http://placehold.it/300x200" alt="profile"/></div>
         <strong className="tit_profile">이름입니다.</strong>
         <p className="txt_profile">email 입니다. </p>
      </div>
