@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import initMap from 'utils/initMap';
 
 export default function MapContainer({ data }) {
-  
   useEffect(() => {
     initMap(data)
   }, [])

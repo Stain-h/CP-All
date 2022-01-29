@@ -5,7 +5,6 @@ import Layout from "Layout"
 import SearchForm from 'components/SearchForm';
 import { onAuthStateChanged } from '@firebase/auth';
 import { auth } from 'fbase';
-import initMap from 'utils/maps';
 import { getFirestore, collection, getDocs, query, where } from "firebase/firestore"
 import MapContainer from 'containers/MapContainer';
 
@@ -14,22 +13,22 @@ const tag = 'App->'
 function App() {
   const [init, setInit] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [db, setDb] = useState([]);
+  const [data, setData] = useState([]);
 
   // FireStore Set
-  const getDB = async() => {
+  async function fetchData() {
     const database = getFirestore(); 
     const campRef = collection(database, "places")
     const q = query(campRef, where('id', '<=', 20))
     const querySnapshot = await getDocs(q);
 
     querySnapshot.forEach((doc) => {
-      setDb(db.push(doc.data()))
+      setData(data.push(doc.data()))
     })
   }
 
   useEffect(() => {
-    getDB();
+    fetchData();
     onAuthStateChanged(auth, (user) => {
       if(user){
         setIsLoggedIn(true)
@@ -45,7 +44,7 @@ function App() {
       <GlobalStyles />
       <Layout>{init ?  <Router isLoggedIn={isLoggedIn} />  : 'initializing...'}</Layout>
       <SearchForm />
-      <MapContainer data={db}/>
+      <MapContainer data={data}/>
     </>
   );
 }
