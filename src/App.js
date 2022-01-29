@@ -6,12 +6,14 @@ import SearchForm from 'components/SearchForm';
 import { onAuthStateChanged } from '@firebase/auth';
 import { auth } from 'fbase';
 import initMap from 'utils/maps';
+import getDB from 'utils/getDB';
 
 function App() {
   const [init, setInit] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
+    getDB();
     initMap();
     onAuthStateChanged(auth, (user) => {
       if(user){
@@ -22,6 +24,7 @@ function App() {
       setInit(true)
     })
   }, [])
+
   return (
     <>
       <GlobalStyles />
