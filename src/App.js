@@ -6,15 +6,30 @@ import SearchForm from 'components/SearchForm';
 import { onAuthStateChanged } from '@firebase/auth';
 import { auth } from 'fbase';
 import initMap from 'utils/maps';
-import getDB from 'utils/getDB';
+import { getFirestore, collection, getDocs, query, where } from "firebase/firestore"
+import MapContainer from 'containers/MapContainer';
+
+const tag = 'App->'
 
 function App() {
   const [init, setInit] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [db, setDb] = useState([]);
+
+  // FireStore Set
+  const getDB = async() => {
+    const database = getFirestore(); 
+    const campRef = collection(database, "places")
+    const q = query(campRef, where('id', '<=', 20))
+    const querySnapshot = await getDocs(q);
+
+    querySnapshot.forEach((doc) => {
+      setDb(db.push(doc.data()))
+    })
+  }
 
   useEffect(() => {
     getDB();
-    initMap();
     onAuthStateChanged(auth, (user) => {
       if(user){
         setIsLoggedIn(true)
@@ -30,7 +45,7 @@ function App() {
       <GlobalStyles />
       <Layout>{init ?  <Router isLoggedIn={isLoggedIn} />  : 'initializing...'}</Layout>
       <SearchForm />
-      <div id="cp-map" style={{ width:"100%", height:"100vh" }}></div>
+      <MapContainer data={db}/>
     </>
   );
 }
