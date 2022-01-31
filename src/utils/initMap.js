@@ -1,6 +1,6 @@
 const { naver } = window;
 
-export default function fetchData(data) {
+export default function initMap(data) {
   const tag = 'MapContainer ->'
   const campsites = data;
   console.log(tag, campsites);

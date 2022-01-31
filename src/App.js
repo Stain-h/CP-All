@@ -21,7 +21,7 @@ function App() {
   async function fetchData() {
     const database = getFirestore(); 
     const campRef = collection(database, "places")
-    const q = query(campRef, where('id', '<=', 20))
+    const q = query(campRef, where('id', '<=', 100))
     const querySnapshot = await getDocs(q);
     let array  = [];
 
