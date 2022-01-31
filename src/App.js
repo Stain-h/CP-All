@@ -7,13 +7,15 @@ import { onAuthStateChanged } from '@firebase/auth';
 import { auth } from 'fbase';
 import { getFirestore, collection, getDocs, query, where } from "firebase/firestore"
 import MapContainer from 'containers/MapContainer';
+import { useDispatch } from 'react-redux';
+import { initMaps } from 'redux/modules/places'
 
 const tag = 'App->'
 
 function App() {
   const [init, setInit] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [data, setData] = useState([]);
+  const dispatch = useDispatch();
 
   // FireStore Set
   async function fetchData() {
@@ -21,10 +23,12 @@ function App() {
     const campRef = collection(database, "places")
     const q = query(campRef, where('id', '<=', 20))
     const querySnapshot = await getDocs(q);
+    let array  = [];
 
     querySnapshot.forEach((doc) => {
-      setData(data.push(doc.data()))
+      array.push(doc.data())
     })
+    dispatch(initMaps(array))
   }
 
   useEffect(() => {
@@ -44,7 +48,7 @@ function App() {
       <GlobalStyles />
       <Layout>{init ?  <Router isLoggedIn={isLoggedIn} />  : 'initializing...'}</Layout>
       <SearchForm />
-      <MapContainer data={data}/>
+      <MapContainer />
     </>
   );
 }
