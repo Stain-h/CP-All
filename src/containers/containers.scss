@@ -1,0 +1,27 @@
+.info_card{
+  position: relative;
+  padding: 10px;
+  border-radius: 6px;
+  .tit_card{
+    font-size: 14px;
+    font-weight: bold;
+  }
+  .txt_card{
+    font-size: 12px;
+  }
+  .hori_line{
+    display: block;
+    width: 100%;
+    margin-top: 2px;
+    margin-bottom: 4px;
+    border: none;
+    border-top: 1px solid #eee;
+  }
+  .btn_detail{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

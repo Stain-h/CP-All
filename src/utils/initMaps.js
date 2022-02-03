@@ -17,10 +17,11 @@ export default async function initMaps(data){
     // area 데이터가 존재 할 경우 forEach문으로 marker와 infoWindow 추출
     areaArr.forEach((item) => {
       let content = `
-      <div style="width: 100px;text-align:center;padding:10px">
-        <b>${item.camp_title}</b>
-        <br>
-        - From 네이버 지도 - 
+      <div class="info_card">
+        <strong class="tit_card">${item.camp_title}</strong>
+        <hr class="hori_line">
+        <p class="txt_card">${item.camp_address}</p>
+        <button type="button" class="btn_detail"><span class="screen_out">장소 상세보기</span></button>
       </div>
     `
 
@@ -31,7 +32,9 @@ export default async function initMaps(data){
       })
 
       let infoWindow = new naver.maps.InfoWindow({
-        content: content
+        content: content,
+        borderRadius: "6px",
+        borderColor: "#eee"
       })
 
       markers.push(marker);
@@ -49,6 +52,7 @@ export default async function initMaps(data){
           } else {
               infoWindow.open(map, marker);
           }
+          console.log(markers[seq]);
       }
     }
     for (let i=0, ii=markers.length; i<ii; i++) {

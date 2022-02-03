@@ -20,6 +20,8 @@ const GlobalStyles = createGlobalStyle`
   /* a:active{background-color:transparent} */
   address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
   img{vertical-align:top}
+  
+  .screen_out{overflow:hidden;position:absolute;width:1px;height:1px;line-height:0;text-indent:-9999px}
 `
 
 export default GlobalStyles;

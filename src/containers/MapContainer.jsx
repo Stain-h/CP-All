@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import initMap from 'utils/initMap';
 import initMaps from 'utils/initMaps'
+import 'containers/containers.scss'
 
 export default function MapContainer() {
   const place = useSelector(state => state.places.place)
